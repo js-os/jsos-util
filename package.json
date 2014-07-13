@@ -1,14 +1,15 @@
 {
   "name": "jsos-util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JSOS reusable utilities with minimal dependencies.",
   "repository": {
-    "type" : "git",
-    "url" : "git@github.com:js-os/jsos-util.git"
+    "type": "git",
+    "url": "git@github.com:js-os/jsos-util.git"
   },
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/vows test/*-spec.js"
+    "test": "node_modules/.bin/vows test/*-spec.js",
+    "docs": "node_modules/.bin/jsdoc2md -t README.hbs lib/*.js > README.md"
   },
   "author": "Lauri Svan",
   "license": "MIT",
@@ -16,6 +17,7 @@
     "jsos"
   ],
   "devDependencies": {
+    "jsdoc-to-markdown": "^0.4.0",
     "vows": "^0.7.0"
   }
 }

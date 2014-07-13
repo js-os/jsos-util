@@ -1,0 +1,10 @@
+{
+  "plugins": [ "plugins/markdown" ],
+  "markdown": {
+    "parser": "gfm"
+  },
+  "opts": {
+    "destination": "./doc/",
+    "recurse": true
+  }
+}
