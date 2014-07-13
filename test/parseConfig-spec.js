@@ -25,7 +25,7 @@ vows.describe('util.parseConfig').addBatch({
       assert.equal(topic.npm.prefix, '/home/lauri/.jsos');
     },
     'Variables get substituted': function (topic) {
-      var hasUnsubstitutedVariable = topic.npm.prefix.match('${HOME}') !== null;
+      var hasUnsubstitutedVariable = topic.npm.cache.match('HOME') !== null;
       assert.equal(hasUnsubstitutedVariable, false);
     }
   },
@@ -39,10 +39,9 @@ vows.describe('util.parseConfig').addBatch({
     'Defaults get included': function (topic) {
       assert.equal(topic.onlyInDefaults, true);
     },
-    'Variables in defaults substituted': function (topic) {
+    'Variables in defaults get substituted': function (topic) {
       var hasUnsubstitutedVariable = topic.defaultsToSubstitute.match('${HOME}') !== null;
       assert.equal(hasUnsubstitutedVariable, false);
-    },
-
+    }
   }
 }).export(module); // Export the Suite

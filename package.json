@@ -1,6 +1,6 @@
 {
   "name": "jsos-util",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JSOS reusable utilities with minimal dependencies.",
   "repository": {
     "type": "git",
