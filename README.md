@@ -1,7 +1,7 @@
-[![view on npm](http://img.shields.io/npm/v/array-tools.svg)](https://www.npmjs.org/package/jsos-util)
+[![view on npm](http://img.shields.io/npm/v/jsos-util.svg)](https://www.npmjs.org/package/jsos-util)
 [![npm module downloads per month](http://img.shields.io/npm/dm/jsos-util.svg)](https://www.npmjs.org/package/jsos-util)
-[![Build Status](https://travis-ci.org/jsos/jsos-util.svg?branch=master)](https://travis-ci.org/jsos/jsos-util)
-[![Dependency Status](https://david-dm.org/75lb/array-tools.svg)](https://david-dm.org/jsos/jsos-util)
+[![Build Status](https://api.travis-ci.org/js-os/jsos-util.svg?branch=master)](https://travis-ci.org/js-os/jsos-util)
+[![Dependency Status](https://david-dm.org/js-os/jsos-util.svg)](https://david-dm.org/js-os/jsos-util)
 
 <a name="module_jsos-util"></a>
 #jsos-util
@@ -15,10 +15,28 @@ var util = require('jsos-util');
 
 **Members**
 
+* [util.substitute(str, [dict])](#module_jsos-util.substitute)
 * [util.mapNested(source, fun)](#module_jsos-util.mapNested)
 * [util.merge(source, ...sourceN)](#module_jsos-util.merge)
 * [util.parseConfig(...path, [defaults])](#module_jsos-util.parseConfig)
-* [util~substitute(str, [dict])](#module_jsos-util.substitute)
+
+<a name="module_jsos-util.substitute"></a>
+##util.substitute(str, [dict])
+Substitute the values in the string based on the given dictionary.
+Based on https://github.com/npm/npmconf/blob/master/npmconf.js
+
+**Params**
+
+- str `string` - The string to substitute
+- [dict={}] `Object` - dict The dictionary to use for substitution
+
+**Returns**: `string` - The string after substitutions; str if str is not a string  
+**Example**  
+```js
+var value = substitute('${HOME}/.jsos/cache', process.env);
+// 'home/lauri/.jsos/cache'
+console.log(value);
+```
 
 <a name="module_jsos-util.mapNested"></a>
 ##util.mapNested(source, fun)
@@ -75,25 +93,3 @@ parseConfig('.jsos-initc', '/etc/jsos-initrc', { foo: 'bar' });
 parseConfig('.jsos-initc', '/etc/jsos-initrc');
 ```
 
-<a name="module_jsos-util.substitute"></a>
-##util~substitute(str, [dict])
-Substitute the values in the string based on the given dictionary.
-Based on https://github.com/npm/npmconf/blob/master/npmconf.js
-
-**Params**
-
-- str `string` - The string to substitute
-- [dict={}] `Object` - dict The dictionary to use for substitution
-
-**Scope**: inner function of [jsos-util](#module_jsos-util)  
-**Returns**: `string` - The string after substitutions; str if str is not a string  
-**Example**  
-```js
-var value = substitute('${HOME}/.jsos/cache', process.env);
-// 'home/lauri/.jsos/cache'
-console.log(value);
-```
-
-
-
-*documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*.
