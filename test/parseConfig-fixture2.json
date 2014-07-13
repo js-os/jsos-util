@@ -1,0 +1,7 @@
+{
+  "npm": {
+    "prefix": "/home/lauri/.jsos",
+    "cache": "${HOME}/cache"
+  },
+  "onlyInFixture2": true
+}

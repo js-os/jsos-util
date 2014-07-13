@@ -1,0 +1,7 @@
+{
+  "npm": {
+    "prefix": "/usr/var/jsos/",
+    "cache": "${HOME}/cache"
+  },
+  "onlyInFixture1": true
+}
