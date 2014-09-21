@@ -3,6 +3,7 @@
 .git*
 .npmignore
 .travis.yml
+.jshintrc
 README.hbs
 jsdoc.json
 test/
