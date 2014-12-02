@@ -1,5 +1,5 @@
 var vows = require('vows'),
-    util = require('..'),
+    mapNested = require('../lib/map-nested'),
     assert = require('assert');
 
 var fixture = {
@@ -25,7 +25,7 @@ vows.describe('util.mapNested').addBatch({
     topic: function() {
       var results = {
         original: fixture,
-        mapped: util.mapNested(fixture, mapper)
+        mapped: mapNested(fixture, mapper)
       };
 
       return results;

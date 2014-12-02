@@ -1,16 +1,16 @@
 var vows = require('vows'),
-    util = require('..'),
+    merge = require('../lib/merge'),
     assert = require('assert');
 
 vows.describe('util.merge').addBatch({
   'When merging two complex objects': {
     topic: function() {
-      return util.merge(
+      return merge(
         { foo: { bar: { text2: 'World', text3: 'Trade Center' }}},
         { foo: { bar: { text: 'Hello', text2: 'WTF' }}}
       );
     },
-    
+
     'does not discard values from any input': function (topic) {
       assert.equal (topic.foo.bar.text, 'Hello');
       assert.equal (topic.foo.bar.text2, 'World');

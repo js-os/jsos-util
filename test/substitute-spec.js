@@ -1,5 +1,5 @@
 var vows = require('vows'),
-    util = require('..'),
+    substitute = require('../lib/substitute'),
     assert = require('assert');
 
 var fixture = {
@@ -8,7 +8,7 @@ var fixture = {
       undef: '/foo/${UNDEFINED}/bar',
       missing: '/foo/${MISSING}/bar'
     },
-    dictionary = { 
+    dictionary = {
       HOME: '/home/lauri',
       TEMP: '/tmp',
       UNDEFINED: undefined,
@@ -23,7 +23,7 @@ vows.describe('util.substitute').addBatch({
       };
 
       for (key in fixture) {
-        results.substituted[key] = util.substitute(fixture[key], dictionary);
+        results.substituted[key] = substitute(fixture[key], dictionary);
       }
 
       return results;
