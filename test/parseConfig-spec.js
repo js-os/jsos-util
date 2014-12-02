@@ -1,5 +1,5 @@
 var vows = require('vows'),
-    util = require('..'),
+    parseConfig = require('../lib/parse-config'),
     assert = require('assert');
 
 var defaults = {
@@ -14,7 +14,7 @@ var defaults = {
 vows.describe('util.parseConfig').addBatch({
   'When loading several config files': {
     topic: function() {
-      return util.parseConfig('test/parseConfig-fixture2.json', 'test/parseConfig-fixture1.json');
+      return parseConfig('test/parseConfig-fixture2.json', 'test/parseConfig-fixture1.json');
     },
 
     'Every configuration gets read': function(topic) {
@@ -31,11 +31,11 @@ vows.describe('util.parseConfig').addBatch({
   },
   'When loading several config files & defaults': {
     topic: function() {
-      return util.parseConfig('test/parseConfig-fixture2.json', 'test/parseConfig-fixture1.json', defaults);
+      return parseConfig('test/parseConfig-fixture2.json', 'test/parseConfig-fixture1.json', defaults);
     },
     'Defaults get the least priority': function (topic) {
       assert.equal(topic.npm.prefix !== '.jsos', true);
-    },    
+    },
     'Defaults get included': function (topic) {
       assert.equal(topic.onlyInDefaults, true);
     },
