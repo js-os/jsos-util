@@ -14,7 +14,13 @@
   "author": "Lauri Svan",
   "license": "MIT",
   "keywords": [
-    "jsos util merge deep-merge config string-interpolation string-substitute"
+    "jsos",
+    "util",
+    "merge",
+    "deep merge",
+    "config",
+    "string interpolation",
+    "string substitution"
   ],
   "devDependencies": {
     "jsdoc-to-markdown": "^0.4.0",
